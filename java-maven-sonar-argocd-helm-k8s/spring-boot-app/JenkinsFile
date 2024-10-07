@@ -45,15 +45,6 @@ pipeline {
         }
       }
     }
-    stage('Run JAR File') {
-      steps {
-        // Run the JAR file from the target directory
-        sh '''
-          cd java-maven-sonar-argocd-helm-k8s/spring-boot-app/target
-          java -jar spring-boot-web.jar  # Run the JAR file
-        '''
-      }
-    }
     stage('Update Deployment File') {
         environment {
             GIT_REPO_NAME = "Jenkins-Zero-To-Hero"
